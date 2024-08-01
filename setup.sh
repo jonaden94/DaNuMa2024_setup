@@ -1,30 +1,35 @@
 # what was done before running this file:
 # 1. create folder named "repos" in ~
-# 2. git clone https://github.com/jonaden94/setup_summer_school 
-# 3. cd repos/setup_summer_school
+# 2. git clone https://github.com/jonaden94/DaNuMa2024_setup 
+
+# cd to home directory
+cd $HOME
 
 # nice bashrc
-cp -f files/.bashrc .bashrc
+cp -f $HOME/repos/DaNuMa2024_setup/setup_files/.bashrc $HOME/.bashrc
 
 # clone repos
+cd repos
 git clone https://github.com/jonaden94/DaNuMa2024
 git clone https://github.com/jonaden94/PigDetect
 
 # symbolic link data
-ln -s /scratch1/projects/scc_gwdg_danuma_ss2024/data 
+cd DaNuMa2024
+mkdir data
+ln -s /scratch1/projects/scc_gwdg_danuma_ss2024/raw_data data
+mkdir /scratch1/users/$USER/output_data
+ln -s /scratch1/users/$USER/output_data data
 
 # conda environment
-bash /user/henrich1/u12112/repos/setup_summer_school/files/install_miniforge.sh
+bash $HOME/repos/DaNuMa2024_setup/setup_files/install_miniforge.sh
 
 # run new bash
 exec bash -l
 
 # environment setup
-cd ..
-git clone https://github.com/jonaden94/exercises_summer_school
-cd exercises_summer_school
 source setup/setup.sh
-cd ..
+cd ../PigDetect
+source $HOME/repos/DaNuMa2024_setup/setup_files/PigDetect_setup.sh
 
 # install kernel for notebook
-python -m ipykernel install --user --name exenv --display-name "exenv"
+python -m ipykernel install --user --name danuma --display-name "python danuma"
