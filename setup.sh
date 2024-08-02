@@ -24,12 +24,12 @@ ln -s /scratch1/users/$USER/output_data data
 bash $HOME/repos/DaNuMa2024_setup/setup_files/install_miniforge.sh
 
 # run new bash
-exec bash -l
+source $HOME/.bashrc
 
-# environment setup
+# # environment setup (not enough disc space yet for Pigdetect) ALSO MIM MIGHT LEAD TO PROBLEMS SIMILAR AS PIP WHICH MIGHT NOT BE EASILY FIXABLE FOR AUTOMATIC INSTALLATION
 source setup/setup.sh
-cd ../PigDetect
-source $HOME/repos/DaNuMa2024_setup/setup_files/PigDetect_setup.sh
+# cd ../PigDetect
+# source $HOME/repos/DaNuMa2024_setup/setup_files/PigDetect_setup.sh
 
 # install kernel for notebook
 python -m ipykernel install --user --name danuma --display-name "python danuma"

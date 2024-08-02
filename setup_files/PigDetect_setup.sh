@@ -1,5 +1,5 @@
 ############## 2) get further required packages
-pip install -U openmim
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org -U openmim
 mim install mmengine
 mim install "mmcv>=2.0.0"
 
@@ -23,16 +23,16 @@ git submodule update --init --recursive
 
 ############## 4) build mmdetection, mmyolo and detection_utils
 cd mmdetection
-pip install -v -e .
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org -v -e .
 cd ..
 
 cd mmyolo
-pip install -r requirements/albu.txt
-pip install albumentations==1.3.1 # this downgrade is necessary to avoid conflicts with mmyolo
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org -r requirements/albu.txt
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org albumentations==1.3.1 # this downgrade is necessary to avoid conflicts with mmyolo
 mim install -v -e .
 cd ..
 
-pip install -v -e .
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org -v -e .
 
 # other conda packages
 conda deactivate

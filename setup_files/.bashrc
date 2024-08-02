@@ -29,4 +29,4 @@ fi
 alias conda='mamba'
 
 ############################# 
-module load gcc
+# module load gcc
