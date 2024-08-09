@@ -1,7 +1,7 @@
 ############## 2) get further required packages
 pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org -U openmim
-mim install mmengine
-mim install "mmcv>=2.0.0"
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org mmengine
+pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org "mmcv>=2.0.0rc4,<2.2.0"
 
 ############## 3) initialize submodules to the commits specified in this repo
 ############## mmdetection commit hash: cfd5d3a985b0249de009b67d04f37263e11cdf3d
@@ -33,6 +33,3 @@ mim install -v -e .
 cd ..
 
 pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org -v -e .
-
-# other conda packages
-conda deactivate
