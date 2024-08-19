@@ -1,7 +1,8 @@
 ############## 2) get further required packages
 pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org -U openmim
-pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org mmengine
-pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org "mmcv>=2.0.0rc4,<2.2.0"
+mim install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org --trusted-host download.openmmlab.com mmengine
+mim install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org --trusted-host download.openmmlab.com "mmcv>=2.0.0rc4,<2.2.0"
+# mim install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org "mmcv>=2.0.0"
 
 ############## 3) initialize submodules to the commits specified in this repo
 ############## mmdetection commit hash: cfd5d3a985b0249de009b67d04f37263e11cdf3d
@@ -29,7 +30,7 @@ cd ..
 cd mmyolo
 pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org -r requirements/albu.txt
 pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org albumentations==1.3.1 # this downgrade is necessary to avoid conflicts with mmyolo
-mim install -v -e .
+mim install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org --trusted-host download.openmmlab.com -v -e .
 cd ..
 
 pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org --trusted-host pypi.python.org -v -e .
