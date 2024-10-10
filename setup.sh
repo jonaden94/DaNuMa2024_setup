@@ -30,6 +30,7 @@ mkdir /$scratch_folder/users/$USER/output_data
 ln -s /$scratch_folder/users/$USER/output_data data
 
 # conda environment
+unset PYTHONPATH
 bash /$scratch_folder/projects/scc_gwdg_danuma_ss2024/DaNuMa2024_setup/setup_files/install_miniforge.sh
 
 # run new bash
@@ -50,7 +51,7 @@ hours=$((elapsed_time / 3600))
 minutes=$(((elapsed_time % 3600) / 60))
 seconds=$((elapsed_time % 60))
 echo "Elapsed time: $hours hours, $minutes minutes, $seconds seconds"
-
+echo "Setup finished"
 
 # WARNING:
 #     You currently have a PYTHONPATH environment variable set. This may cause
